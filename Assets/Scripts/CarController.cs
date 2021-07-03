@@ -182,19 +182,19 @@ public class CarController : NetworkBehaviour
         }
     }
 
-    [Command]
+    [Client]
     private void FlipCar()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
             Vector3 eulerRotation = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
-            FlipCarOnClient();
+            FlipCarOnServer();
         }
     }
 
-    [ClientRpc]
-    private void FlipCarOnClient()
+    [Server]
+    private void FlipCarOnServer()
     {
         FlipCar();
     }

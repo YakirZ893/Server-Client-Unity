@@ -14,7 +14,7 @@ public class SpawnManager : NetworkBehaviour
     private int _randomSpawnIndex = 0;
     private GameObject CarRef;
 
-    [Server]
+    
     public void SpawnObstacle()
     {
         CarRef = serverData.GetPlayer();
@@ -26,6 +26,7 @@ public class SpawnManager : NetworkBehaviour
         }
         NetworkClient.RegisterPrefab(obstacleToSpawn);
         obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), Quaternion.identity);
+        
     }
 
     [ClientRpc]
