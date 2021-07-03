@@ -15,7 +15,7 @@ public class SpawnManager : NetworkBehaviour
     private GameObject CarRef;
 
     [Server]
-    public void SpawnObstacleOnServer()
+    public void SpawnObstacle()
     {
         CarRef = serverData.GetPlayer();
         obstacleToSpawn = obstacles[_randomSpawnIndex];

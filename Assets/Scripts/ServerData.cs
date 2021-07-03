@@ -9,7 +9,6 @@ public class ServerData : ScriptableObject
 {
     private GameObject UiData;
     private GameObject PlayerData;
-    private GameObject prefab;
     [SerializeField] private EventTrigger[] eventTriggers;
 
     public GameObject GetUI()
@@ -28,22 +27,6 @@ public class ServerData : ScriptableObject
         PlayerData = GameObject.FindGameObjectWithTag("Player");
         return PlayerData;
     }
-
-    public void SetPrefab(GameObject prefab)
-    {
-        this.prefab = prefab;
-    }
-    
-
-    public GameObject GetPrefab()
-    {
-        return this.prefab;
-    }
-    public void spawn(GameObject prefab)
-    {
-        Instantiate(prefab);
-    }
-
 
     public void SetRemote()
     {
