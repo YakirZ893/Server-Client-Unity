@@ -46,7 +46,7 @@ public class CarController : NetworkBehaviour
     private float _currentSteerAngle;
     [SyncVar]
     private bool isBreaking;
-    private Quaternion _originalRotationValue;
+
 
     public void AccelInput(float input) { Accel = input; }
     public void SteerInput(float input) { Steer = input; }
@@ -63,7 +63,6 @@ public class CarController : NetworkBehaviour
         {
             return;
         }
-        _originalRotationValue = transform.rotation;
         UI = serverData.GetUI();
         UI.SetActive(false);
         serverData.GetPlayer();
@@ -84,7 +83,6 @@ public class CarController : NetworkBehaviour
             IsRemote = true;
         }
     }
-
 
     void FixedUpdate()
     {
@@ -180,9 +178,25 @@ public class CarController : NetworkBehaviour
         float carRot = gameObject.transform.rotation.eulerAngles.z;
         if (carRot >= _flipValue || carRot <= _flipValue)
         {
-            if (Input.GetKeyDown(KeyCode.F))
-                transform.rotation = Quaternion.Slerp(transform.rotation, _originalRotationValue, Time.deltaTime);
+            FlipCar();
         }
+    }
+
+    [Command]
+    private void FlipCar()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Vector3 eulerRotation = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
+            FlipCarOnClient();
+        }
+    }
+
+    [ClientRpc]
+    private void FlipCarOnClient()
+    {
+        FlipCar();
     }
 
     private void OnModeChange(bool oldMode, bool newMode)

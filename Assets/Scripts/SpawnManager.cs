@@ -21,21 +21,17 @@ public class SpawnManager : NetworkBehaviour
         obstacleToSpawn = obstacles[_randomSpawnIndex];
         _randomSpawnIndex++;
         if (_randomSpawnIndex == obstacles.Length)
+        {
             _randomSpawnIndex = 0;
+        }
         NetworkClient.RegisterPrefab(obstacleToSpawn);
-        obstacleToSpawn = Instantiate(obstacleToSpawn , CarRef.transform.position + (CarRef.transform.forward * spawnOffset), Quaternion.identity);
+        obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), Quaternion.identity);
     }
 
     [ClientRpc]
     public void RpcSpawnObstacleOnClient()
     {
-        CarRef = serverData.GetPlayer();
-        obstacleToSpawn = obstacles[_randomSpawnIndex];
-        _randomSpawnIndex++;
-        if (_randomSpawnIndex == obstacles.Length)
-            _randomSpawnIndex = 0;
-        NetworkClient.RegisterPrefab(obstacleToSpawn);
-        obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), Quaternion.identity);
+        SpawnObstacle();
     }
 
 }
