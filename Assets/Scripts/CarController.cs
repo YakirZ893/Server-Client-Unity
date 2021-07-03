@@ -189,15 +189,10 @@ public class CarController : NetworkBehaviour
         {
             Vector3 eulerRotation = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
-            FlipCarOnServer();
+           
         }
     }
 
-    [Server]
-    private void FlipCarOnServer()
-    {
-        FlipCar();
-    }
 
     private void OnModeChange(bool oldMode, bool newMode)
     {

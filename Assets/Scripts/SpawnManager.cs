@@ -25,7 +25,7 @@ public class SpawnManager : NetworkBehaviour
             _randomSpawnIndex = 0;
         }
         NetworkClient.RegisterPrefab(obstacleToSpawn);
-        obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), Quaternion.identity);
+        obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), obstacleToSpawn.transform.rotation);
         
     }
 
