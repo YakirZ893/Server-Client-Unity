@@ -1727,8 +1727,8 @@ MonoBehaviour:
   serverData: {fileID: 11400000, guid: bcbaaace65a678340b5c36edc806de5c, type: 2}
   obstacles:
   - {fileID: 1721119835381369953, guid: d2894f50e6b391b42b9df9865a01fe8d, type: 3}
-  - {fileID: 134316262610797308, guid: 5c4406954a374c142b43f8d9c5a8db2f, type: 3}
-  - {fileID: 3259516914039126965, guid: f85cabc187ecd8b4693a43a1853debec, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnOffset: 25
 --- !u!114 &7375549655682869093
 MonoBehaviour:
