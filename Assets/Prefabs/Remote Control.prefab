@@ -1726,9 +1726,9 @@ MonoBehaviour:
   syncInterval: 0.1
   serverData: {fileID: 11400000, guid: bcbaaace65a678340b5c36edc806de5c, type: 2}
   obstacles:
-  - {fileID: 1721119835381369953, guid: d2894f50e6b391b42b9df9865a01fe8d, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1213394974549959981, guid: b5e9526ccf8fb88458f765133f18d56a, type: 3}
+  - {fileID: 4297268715844772195, guid: 4f195f98ac004e2459425b890ed839d6, type: 3}
+  - {fileID: 3357518409294531900, guid: a8aecdf33b9650347b3909dc6ca18658, type: 3}
   spawnOffset: 25
 --- !u!114 &7375549655682869093
 MonoBehaviour:
