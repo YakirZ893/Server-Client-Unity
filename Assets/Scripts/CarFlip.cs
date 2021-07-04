@@ -15,7 +15,6 @@ public class CarFlip : NetworkBehaviour
         CarRef. transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
     }
 
-
     [ClientRpc]
     public void RPCFlipCar()
     {

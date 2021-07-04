@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   - {fileID: 1213394974549959981, guid: b5e9526ccf8fb88458f765133f18d56a, type: 3}
   - {fileID: 4297268715844772195, guid: 4f195f98ac004e2459425b890ed839d6, type: 3}
   - {fileID: 3357518409294531900, guid: a8aecdf33b9650347b3909dc6ca18658, type: 3}
-  spawnOffset: 25
+  spawnOffset: 30
 --- !u!114 &7375549655682869093
 MonoBehaviour:
   m_ObjectHideFlags: 0
