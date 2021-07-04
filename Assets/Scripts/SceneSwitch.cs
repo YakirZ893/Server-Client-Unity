@@ -9,14 +9,14 @@ public class SceneSwitch : NetworkBehaviour
         if (isServer)
         {
             Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Offline")
+            if (scene.name == "Desert")
             { 
-                NetworkManager.singleton.ServerChangeScene("new"); 
+                NetworkManager.singleton.ServerChangeScene("HighWay"); 
             }
 
             else 
             { 
-                NetworkManager.singleton.ServerChangeScene("Offline"); 
+                NetworkManager.singleton.ServerChangeScene("Desert"); 
             }
         }
       

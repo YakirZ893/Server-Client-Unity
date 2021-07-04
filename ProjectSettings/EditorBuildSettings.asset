@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Offline.unity
+    path: Assets/Scenes/Desert.unity
     guid: 2fbc85dd72446334788d881d49ad9549
   - enabled: 1
-    path: Assets/Scenes/new.unity
+    path: Assets/Scenes/HighWay.unity
     guid: 6f84cf09fad66834ea56c14a5c523e11
   m_configObjects: {}
