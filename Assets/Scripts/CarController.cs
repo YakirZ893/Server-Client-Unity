@@ -114,7 +114,7 @@ public class CarController : NetworkBehaviour
         serverData.SetRemote();
         if (isServer)
         {
-        serverData.SetCamera();
+            serverData.SetCamera();
         }
     }
 
@@ -154,7 +154,6 @@ public class CarController : NetworkBehaviour
         _currentSteerAngle = maxSteeringAngle * _horizontalInput;
         frontLeftCollider.steerAngle = _currentSteerAngle;
         frontRightCollider.steerAngle = _currentSteerAngle;
-
     }
 
     private void UpdateWheels()
@@ -173,7 +172,7 @@ public class CarController : NetworkBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
-    
+
     private void CheckCar()
     {
         float carRot = gameObject.transform.rotation.eulerAngles.z;
@@ -190,7 +189,7 @@ public class CarController : NetworkBehaviour
         {
             Vector3 eulerRotation = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(eulerRotation.x, eulerRotation.y, 0);
-            
+
         }
     }
 
@@ -198,11 +197,11 @@ public class CarController : NetworkBehaviour
     {
         this.IsRemote = newMode;
     }
-    
-   
-    
 
-    
+
+
+
+
 }
 
 

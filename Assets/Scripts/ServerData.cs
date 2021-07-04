@@ -53,6 +53,7 @@ public class ServerData : ScriptableObject
         entry3.callback.AddListener((eventData) => { car.SteerInput(0); });
         eventTrigger.triggers.Add(entry1);
         eventTrigger.triggers.Add(entry2);
+        eventTrigger.triggers.Add(entry3);
     }
 
     private void SetRight(CarController car, EventTrigger eventTrigger)
@@ -68,20 +69,26 @@ public class ServerData : ScriptableObject
         entry3.callback.AddListener((eventData) => { car.SteerInput(0); });
         eventTrigger.triggers.Add(entry1);
         eventTrigger.triggers.Add(entry2);
+        eventTrigger.triggers.Add(entry3);
     }
     private void SetBrakes(CarController car, EventTrigger eventTrigger)
     {
         EventTrigger.Entry entry1 = new EventTrigger.Entry();
         EventTrigger.Entry entry2 = new EventTrigger.Entry();
         EventTrigger.Entry entry3 = new EventTrigger.Entry();
-        entry1.eventID = EventTriggerType.PointerDown;
-        entry2.eventID = EventTriggerType.PointerUp;
-        entry3.eventID = EventTriggerType.PointerClick;
+        EventTrigger.Entry entry4 = new EventTrigger.Entry();
+        entry1.eventID = EventTriggerType.PointerEnter;
+        entry2.eventID = EventTriggerType.PointerDown;
+        entry3.eventID = EventTriggerType.PointerUp;
+        entry4.eventID = EventTriggerType.PointerExit;
         entry1.callback.AddListener((eventData) => { car.BrakeInput(true); });
-        entry2.callback.AddListener((eventData) => { car.BrakeInput(false); });
+        entry2.callback.AddListener((eventData) => { car.BrakeInput(true); });
         entry3.callback.AddListener((eventData) => { car.BrakeInput(false); });
+        entry4.callback.AddListener((eventData) => { car.BrakeInput(false); });
         eventTrigger.triggers.Add(entry1);
         eventTrigger.triggers.Add(entry2);
+        eventTrigger.triggers.Add(entry3);
+        eventTrigger.triggers.Add(entry4);
     }
     private void SetAccelerator(CarController car, EventTrigger eventTrigger)
     {
@@ -96,6 +103,7 @@ public class ServerData : ScriptableObject
         entry3.callback.AddListener((eventData) => { car.AccelInput(0); });
         eventTrigger.triggers.Add(entry1);
         eventTrigger.triggers.Add(entry2);
+        eventTrigger.triggers.Add(entry3);
     }
     private void SetReverse(CarController car, EventTrigger eventTrigger)
     {
@@ -110,6 +118,7 @@ public class ServerData : ScriptableObject
         entry3.callback.AddListener((eventData) => { car.AccelInput(0); });
         eventTrigger.triggers.Add(entry1);
         eventTrigger.triggers.Add(entry2);
+        eventTrigger.triggers.Add(entry3);
     }
 }
 

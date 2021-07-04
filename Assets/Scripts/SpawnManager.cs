@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using Mirror;
 
 
@@ -14,7 +11,7 @@ public class SpawnManager : NetworkBehaviour
     private int _randomSpawnIndex = 0;
     private GameObject CarRef;
 
-    
+
     public void SpawnObstacle()
     {
         CarRef = serverData.GetPlayer();
@@ -26,7 +23,7 @@ public class SpawnManager : NetworkBehaviour
         }
         NetworkClient.RegisterPrefab(obstacleToSpawn);
         obstacleToSpawn = Instantiate(obstacleToSpawn, CarRef.transform.position + (CarRef.transform.forward * spawnOffset), obstacleToSpawn.transform.rotation);
-        
+
     }
 
     [ClientRpc]

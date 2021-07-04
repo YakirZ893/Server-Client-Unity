@@ -4,7 +4,7 @@ using Mirror;
 
 public class SceneSwitch : NetworkBehaviour
 {
-   
+
     public void ButtonChangeScene()
     {
         if (isServer)
@@ -12,15 +12,14 @@ public class SceneSwitch : NetworkBehaviour
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name == "Desert")
             {
-                NetworkManager.singleton.ServerChangeScene("HighWay"); 
+                NetworkManager.singleton.ServerChangeScene("HighWay");
+            }
+            else
+            {
+                NetworkManager.singleton.ServerChangeScene("Desert");
             }
 
-            else 
-            {
-                NetworkManager.singleton.ServerChangeScene("Desert"); 
-            }
-        
         }
-      
+
     }
 }
